@@ -24,7 +24,7 @@ const webpackConfigBase = {
     },
   },
   resolveLoader: {
-    moduleExtensions: ['-loader']
+    moduleExtensions: ['-loader'],
   },
   optimization: {
     splitChunks: {
@@ -59,6 +59,9 @@ const webpackConfigBase = {
         test: /\.js[x]?$/,
         exclude: /node_modules/,
         loader: 'babel',
+        query: {
+          presets: ['es2015', 'react']
+      }
       },
       {
         test: /\.css/,
@@ -118,7 +121,6 @@ const webpackConfigBase = {
     //   minChunks: 3,
     // }),
   ],
-
 }
 
 module.exports = webpackConfigBase
